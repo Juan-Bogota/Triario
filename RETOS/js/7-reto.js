@@ -14,24 +14,50 @@
  * 
  */
 
-const app = new Vue({
-    el: '#app',
-    data:{
-        url: 'https://pokeapi.co/api/v2/',
-        info: [],
-        buscar: '',
-        ver: ''
+
+Vue.component('pokemon',{
+
+    template: //html
+    `
+    <div>
+        <input type="text" v-model="buscar" @keyup.enter="getPokemon">
+        <button class="btn btn-primary" @click="getPokemon">Buscar</button>
+        <div class=" card mt-3" style="width: 18rem;" v-if="ver === 'ok'">
+        
+            <img :src="info.sprites.other.dream_world.front_default" class="card-img-top" :alt="info.name">
+            <div class="card-body">
+            <h5 class="card-title">{{info.name.toUpperCase()}}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>ID:</b> {{info.id}}</li>
+            <li class="list-group-item"><b>Height:</b> {{info.height}}</li>
+            <li class="list-group-item"><b>Weight:</b> {{info.weight}}</li>
+            </ul>
+        
+        </div>
+        <div class="mt-3" v-else-if="ver==='error'" >
+            <p class="h3"> Pokemon no encontrado =(</p>
+            
+        </div>
+    </div>
+        `,
+        
+    data(){
+        return{
+            url: 'https://pokeapi.co/api/v2/',
+            info: [],
+            ver: '',
+            buscar:''
+        }
     },
     methods: {
+        
         getPokemon(){
             axios.get(`${this.url}pokemon/${this.buscar.toLowerCase()}`)
             .then(res=>{
-                let json =  res.data;
-                //console.log(json);
-                this.info = res.data;
-                
+                this.info = res.data
                 this.ver= 'ok';
-
+                this.buscar = '';
             })
             .catch(err => {
                 this.ver= 'error';
@@ -39,5 +65,10 @@ const app = new Vue({
 
             })
         }
-    }
+    },
+})
+
+const app = new Vue({
+    el: '#app',
+    
 })
