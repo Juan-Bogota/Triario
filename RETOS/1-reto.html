@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 1</title>
+</head>
+<body>
+    <h1>Reto 1</h1>
+    <p>1. Crea una función llamada decimalToBinary() que reciba como parámetro un número entero 
+        decimal y lo convierta en un número binario retornando su resultado. </p>
+</body>
+<script>
+    let number = parseInt(prompt(`Ingrese un numero entero:`));
+    const decimalToBinary = (number) => number.toString(2);
+
+    (number) ? alert(`Binario es ${decimalToBinary(number)}`): alert(`No ingreso un numero valido`);  
+</script>
+</html>
