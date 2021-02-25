@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 2</title>
+</head>
+<body>
+    <h1>Reto 2</h1>
+    <p>2. Crea un nuevo método para el siguiente objeto: 
+        const myCollection = { books: [ { title: 'Cien Años de Soledad', author: 'Gabriel García Márquez', 
+        read: true }, { title: 'Do Androids Dream of Electric Sheep', author: 'Phillip K. Dick', read: false } ] }; 
+        El método debe llamarse isRead() que recibirá objeto con los atributos title, author y read. 
+        Si el libro ha sido leído debe retornar: 
+        "Ya has leido xLibro de xAutor" 
+        Si el libro no ha sido leído debe retornar: 
+        "Aún necesitas leer yLibro de yAutor"</p>
+
+</body>
+
+<script>
+     const myCollection = { books: [ { title: 'Cien Años de Soledad', author: 'Gabriel García Márquez', 
+        read: true }, { title: 'Do Androids Dream of Electric Sheep', author: 'Phillip K. Dick', read: false } ] }; 
+
+    const isRead = (obj) => {
+        if(obj.read) return `Ya has leido el libro ${obj.title} de Autor ${obj.author}`;
+            return `Aún necesitas leer el libro ${obj.title} de autor ${obj.author}` 
+    }
+
+    myCollection.books.forEach((el) =>{
+        console.log(isRead(el));
+    });
+    
+</script>
+</html>
