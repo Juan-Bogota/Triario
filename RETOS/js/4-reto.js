@@ -13,21 +13,21 @@ class Person {
         this.sexo = sexo,
         this.peso = peso,
         this.altura = altura,
-        this.RFC = this.obtenerRFC()
+        this.RFC = this.obtenerRFC
     }
-    calcularIMC(){
+    get calcularIMC(){
         return `Su IMC es ${this.peso/(Math.pow(this.altura, 2))}`; 
     }
-    esMayorDeEdad(){
+    get esMayorDeEdad(){
         return (this.edad >= 18) ? true: false;
     }   
-    obtenerRFC(){
+    get obtenerRFC(){
         return `${this.nombre}${this.edad}${this.sexo.slice(0,1)}`;
     }
 
 }
 
 const juan = new Person('Juan', 31, 'Masculino', 65, 1.71);
-console.log(juan.calcularIMC());
-console.log(juan.esMayorDeEdad());
-console.log(juan.obtenerRFC());
+console.log(juan.calcularIMC);
+console.log(juan.esMayorDeEdad);
+console.log(juan.obtenerRFC);
