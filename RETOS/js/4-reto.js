@@ -1,3 +1,11 @@
+/*
+    Se realiza una clase llamada Person:
+        tienen un constructor que es la estructura base de la clase 
+        Calcular IMC se calcula con el peso en KG dividido en la altura en metros al cuadrado
+        Es Mayor de Edad evalua si la persona tiene 18 o mas años retorna true de lo contrario retorna false
+        obterner RFC es un registro que se forma del nombre, edad e inicial del sexo (ejemplo dummy)
+*/
+
 class Person {
     constructor(nombre, edad, sexo, peso, altura){
         this.nombre = nombre,
