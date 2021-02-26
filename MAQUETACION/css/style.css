@@ -1,0 +1,150 @@
+:root {
+  --color-primary: #222222;
+  --max-width: 1200px;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 2rem;
+}
+
+/******* Seccion 1********/
+
+.header {
+  display: inline-flex;
+  margin: 2rem 12vw;
+  text-align: center;
+  justify-content: flex-start;
+}
+
+.header > * {
+  margin: 1rem;
+}
+
+.round {
+  min-width: 40px;
+  height: 40px;
+  text-align: center;
+  margin: auto;
+  padding-top: 0.4rem;
+  background-color: yellow;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.info {
+  color: grey;
+}
+
+.data {
+  margin: auto 3rem;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  width: 100%;
+}
+
+.data img {
+  width: 100%;
+  padding: 1rem;
+  height: 300px;
+}
+
+.foto {
+  position: relative;
+  min-width: 350px;
+}
+
+.text {
+  position: absolute;
+  font-size: 1rem;
+  bottom: 6px;
+  left: 0;
+  margin: 1rem;
+  padding: 0 calc(10%) 0 1rem;
+  color: white;
+  background-color: rgba(22, 22, 22, 0.4);
+  width: calc(100% - 2rem);
+}
+
+.text h3 {
+  font-size: 1.2rem;
+}
+
+/******* Seccion 2 *********/
+.seccion2 .round.blue {
+  background-color: royalblue;
+  color: white;
+  min-width: 50px;
+  height: 50px;
+  padding: 1rem;
+}
+
+.seccion2 .header {
+  margin: 0 2rem;
+}
+
+/******** Card ******/
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.cards > * {
+  margin: 1rem;
+}
+.card {
+  position: relative;
+  background-color: #e3e4e5;
+}
+
+.card .info-edificio {
+  padding: 0 2rem 2rem 2rem;
+}
+
+.card .pic {
+  width: 100%;
+  height: 300px;
+}
+
+.info-edificio > h2 {
+  font-size: 2rem;
+}
+
+.align > p {
+  margin: 0;
+}
+
+.info > .price {
+  color: royalblue;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.card .in-img {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: 0;
+  top: 250px;
+}
